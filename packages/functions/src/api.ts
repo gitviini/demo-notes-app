@@ -13,7 +13,7 @@ return {
         <meta charset="utf-8" />\
     </head>\
     <body>\
-        <h1>Olá</h1>\
+        <h1>Ola</h1>\
     </body>\
   </html>',
 };

@@ -6,7 +6,9 @@
     "sst": "*"
   },
   "scripts": {
-    "shell": "sst shell tsx"
+    "shell": "sst shell tsx",
+    "dev": "vite dev"
+    
   },
   "devDependencies": {
     "@types/node": "^20.14.11",
