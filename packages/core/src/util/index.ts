@@ -1,6 +1,6 @@
 import { Context, APIGatewayProxyEvent } from "aws-lambda";
 
-export module Util {
+export namespace Util {
   export function handler(
     lambda: (evt: APIGatewayProxyEvent, context: Context) => Promise<string>
   ) {
@@ -25,6 +25,7 @@ export module Util {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,
+          "Content-Type":"text/html",
         },
       };
     };

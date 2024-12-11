@@ -11,7 +11,7 @@ export const main = Util.handler(async (event) => {
     // 'Key' defines the partition key and sort key of
     // the item to be retrieved
     Key: {
-      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
+      userId: "123",
       noteId: event?.pathParameters?.id, // The id of the note from the path
     },
   };
@@ -22,5 +22,16 @@ export const main = Util.handler(async (event) => {
   }
 
   // Return the retrieved item
-  return JSON.stringify(result.Item);
+  // return JSON.stringify(result.Item)
+  return `\
+  <html>\
+    <head>\
+        <meta charset="utf-8" />\
+    </head>\
+    <body>\
+        <h1>Olá</h1>\
+        ${result.Item.content}\
+        ${result.Item.attachment}\
+    </body>\
+  </html>`
 });

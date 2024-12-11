@@ -1,3 +1,5 @@
+import { Resource } from "sst";
+
 export const handler = async () => {
 console.log('functions/src/api.handler rodando');
 return {
@@ -7,14 +9,15 @@ return {
     'Access-Control-Allow-Credentials': true,
     "Content-Type":"text/html",
   },
-  body: '\
+  body: `\
   <html>\
     <head>\
         <meta charset="utf-8" />\
     </head>\
     <body>\
-        <h1>Ola</h1>\
+        <h1>Olá</h1>\
+        ${Resource.Notes.name}
     </body>\
-  </html>',
+  </html>`,
 };
 };

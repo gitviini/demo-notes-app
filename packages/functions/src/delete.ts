@@ -9,7 +9,7 @@ export const main = Util.handler(async (event) => {
   const params = {
     TableName: Resource.Notes.name,
     Key: {
-      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
+      userId: "123",
       noteId: event?.pathParameters?.id, // The id of the note from the path
     },
   };

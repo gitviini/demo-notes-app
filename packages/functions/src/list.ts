@@ -15,12 +15,14 @@ export const main = Util.handler(async (event) => {
     // 'ExpressionAttributeValues' defines the value in the condition
     // - ':userId': defines 'userId' to be the id of the author
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
+      ":userId": "123",
     },
   };
 
   const result = await dynamoDb.send(new QueryCommand(params));
 
   // Return the matching list of items in response body
-  return JSON.stringify(result.Items);
+  return `${result.Items?.map(item=>(
+    "<h3>"+item.noteId+"</h3>"
+  ))}`;
 });
